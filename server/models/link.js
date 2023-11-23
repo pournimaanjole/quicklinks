@@ -6,10 +6,12 @@ const linkSchema = new Schema({
     },
     slug:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     view:{
         type:Number,
+        required:true,
         default:0
         
     },

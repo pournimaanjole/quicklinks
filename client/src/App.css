@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+.maindiv{
+    background: url(https://img.freepik.com/free-vector/digital-dark-wavy-background_23-2148388254.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+   
+    height: 100vh;
+    width: 100vw;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quicklink-container{
+    background:   rgba(0, 0, 0, 0.658); 
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-data {
+    width: 40%;
+    padding: 40px;
+    background-color: #fff;
+    color: black;
+    height: 50vh;
+    margin: auto 0px;
+    margin-left: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.input-data h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+.input-data .input-box{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.input-data .input-box input,
+.input-data .input-box textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    resize: none;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.send
+{
+    margin-top: 1rem;
+    width: 90%;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 0.4rem;
+    
+}
+span{
+  
+    margin-top: 1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+.linkimg{
+    height: 2.4rem;
+  
+ 
+}
+
+.button-copy-link{
+    display: flex;
+    align-items: center;
+   
+ 
 }

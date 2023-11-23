@@ -14,8 +14,51 @@ if(connect){
 }
 }
 connetionToMongodb();
+// post request is created
 
+app.post('/link' , async(req,res)=>{
+    const {url,slug} = req.body
+const randomurl = Math.random().toString(36).substring(2,7)
+    const urldata = new Link({
+        url:url,
+        slug:slug || randomurl
+    })
+   try{
+    const savetoMDB = await urldata.save();
+    res.json({
+        success:true,
+        data:{
+            shortlink:`${process.env.baseUrl}/${savetoMDB.slug}`
+        },
+        message:"save succesfully"
+    })
+   }
+catch(e){
+    res.json({
+        message:e.message
+    })
+
+}
+
+})
+
+app.get('/:slug' , async (req,res)=>{
+const {slug} = req.params
+const findslug = await Link.findOne({slug:slug})
+const setviews = await Link.updateOne({slug:slug} ,{$set: {
+    view : findslug.view + 1
+}})
+
+const rerander = findslug.url
+if(!rerander){
+    return res.json({
+        success:false,
+        message:"invalid url"
+    })
+}
+res.redirect(rerander)
+})
 
 app.listen(PORT,()=>{
-    console.log("server is on ");
+    console.log(`server is on ${PORT}`);
 })
