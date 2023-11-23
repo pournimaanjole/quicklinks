@@ -59,6 +59,15 @@ if(!rerander){
 res.redirect(rerander)
 })
 
+app.get('/api/links' , async(req,res)=>{
+const fetchLinks = await Link.find({})
+res.json({
+    success:true,
+    data:fetchLinks,
+    message:"all data fetch succesfully"
+})
+})
+
 app.listen(PORT,()=>{
     console.log(`server is on ${PORT}`);
 })
