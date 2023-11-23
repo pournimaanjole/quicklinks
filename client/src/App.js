@@ -68,8 +68,8 @@ const App = () => {
 const {url,slug,view} = linkobj
 return(<>
 <div className='urldiv'>
-  <p>Url: { url}</p>
-  <p>slug:{process.env.REACT_APP_BASE_URL}/{ slug}</p>
+  <p>Url:  { url}</p>
+  <p>slug:  {process.env.REACT_APP_BASE_URL}/{ slug}</p>
   <p>Clicks: {view}</p>
   
 </div>

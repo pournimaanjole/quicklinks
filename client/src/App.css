@@ -104,7 +104,13 @@ span{
 .urldiv{
     margin-top: 1rem;
     border: 1px solid white;
-  
+  width: 40rem;
     border-radius: 2rem;
     padding: 2rem 2rem;
+}
+
+.urldiv p{
+    font-size: 1.3rem;
+ margin-top: 0.2rem;
+   
 }
