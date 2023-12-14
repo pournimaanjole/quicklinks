@@ -7,7 +7,6 @@ const app = express();
 app.use(express.json());
 const __dirname = path.resolve();
 import Link from './models/link.js';
-const PORT =process.env.PORT || 5000;
 
 const connetionToMongodb =async () =>{
 const connect = await mongoose.connect(process.env.MONGODB_URL);
@@ -70,12 +69,17 @@ res.json({
 })
 })
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname,"..","client","build")))
-    app.get('*',(req,res)=>{
-   res.sendFile(path.join(__dirname,'..','client','build' ,'index.html'))
+
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
     })
 }
+
+const PORT =process.env.PORT || 5000;
 
 app.listen(PORT,()=>{
     console.log(`server is on ${PORT}`);
